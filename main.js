@@ -3,7 +3,8 @@ console.log("README.md:");
 const searchQueryURL =
 	// "https://api.github.com/repos/gael-src/github-api";
 	// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
-	"https://raw.githubusercontent.com/gael-src/github-api/main/title.txt";
+	"https://api.github.com/repos/gael-src/github-api/contents/title.txt";
+// "https://raw.githubusercontent.com/gael-src/github-api/main/title.txt";
 
 window.addEventListener("DOMContentLoaded", function (e) {
 	return fetch(searchQueryURL)
