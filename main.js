@@ -1,23 +1,46 @@
-console.log("README.md:");
-
-const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
-// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
-// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
-// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
-
 window.addEventListener("DOMContentLoaded", function (e) {
+	// TXT FETCH
+	titleFetch();
+	articleFetch();
+	// JSON FETCH
 	fetchAsync();
+	// TXT OUTPUT
 	txtOutput();
+	// TXT OUTPUT
 	jsonOutput();
-	return fetch(searchQueryURL)
-		.then((result) => result.json())
-		.then((response) => {
-			console.log("response"), console.log(response);
-		})
-		.catch((err) => console.log(err));
 });
 
-// ASYNC AWAIT FETCH
+// TITLE TXT FETCH
+function titleFetch() {
+	const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
+	// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
+	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
+	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
+
+	fetch(searchQueryURL)
+		.then((result) => result.json())
+		.then((response) => {
+			console.log("title response"), console.log(response);
+		})
+		.catch((err) => console.log(err));
+}
+
+// ARTICLE TXT FETCH
+function articleFetch() {
+	const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
+	// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
+	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
+	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
+
+	fetch(searchQueryURL)
+		.then((result) => result.json())
+		.then((response) => {
+			// console.log("article response"), console.log(response);
+		})
+		.catch((err) => console.log(err));
+}
+
+// ASYNC AWAIT JSON FETCH
 async function fetchAsync() {
 	const requestOptions = {
 		method: "GET",
@@ -33,25 +56,25 @@ async function fetchAsync() {
 	)
 		.then((response) => response.json())
 		.then((result) => {
-			console.log("result"), console.log(result);
+			// console.log("result"), console.log(result);
 		})
 		.catch((error) => console.log("error:", error));
 }
 
-// TXT
+// TXT OUTPUT
 function txtOutput() {
-	console.log("txtOutput");
+	// console.log("txtOutput");
 	const title = document.querySelector(".h3--title");
 	const article = document.querySelector(".p--article");
 	title.innerHTML = "Placeholder Title";
 	article.innerHTML = "Placeholder Article";
 }
 
-// JSON
+// JSON OUTPUT
 function jsonOutput() {
 	const jsonWrapper = document.querySelector(".json--wrapper");
 
-	console.log("jsonOutput");
+	// console.log("jsonOutput");
 	let articles = [
 		{
 			title: "Title 1 in .json file",
