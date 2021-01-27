@@ -1,7 +1,20 @@
+let titleTXT = "Placeholder Title";
+let articleTXT = "Placeholder Article";
+let articlesJSON = [
+	{
+		title: "Title 1 in .json file",
+		article: "Lorem 1 ipsum dolor sit",
+	},
+	{
+		title: "Title 2 in .json file",
+		article: "Lorem 2 ipsum dolor sit",
+	},
+];
+
 window.addEventListener("DOMContentLoaded", function (e) {
 	// TXT FETCH
-	titleFetch();
-	articleFetch();
+	// titleFetch();
+	// articleFetch();
 	// JSON FETCH
 	fetchAsync();
 	// TXT OUTPUT
@@ -12,22 +25,24 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
 // TITLE TXT FETCH
 function titleFetch() {
-	const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
-	// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
+	const searchQueryURL = 
+	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
+	// "https://api.github.com/repos/gael-src/github-api";
 	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
 	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
 
 	fetch(searchQueryURL)
 		.then((result) => result.json())
 		.then((response) => {
-			console.log("title response"), console.log(response);
+			// console.log("title response"), console.log(response);
+			// titleTXT = result;
 		})
 		.catch((err) => console.log(err));
 }
 
 // ARTICLE TXT FETCH
 function articleFetch() {
-	const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
+	// const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
 	// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
 	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
 	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
@@ -36,6 +51,7 @@ function articleFetch() {
 		.then((result) => result.json())
 		.then((response) => {
 			// console.log("article response"), console.log(response);
+			// articlesJSON = result;
 		})
 		.catch((err) => console.log(err));
 }
@@ -48,15 +64,17 @@ async function fetchAsync() {
 	};
 
 	await fetch(
-		"https://api.github.com/repos/gael-src/github-api",
-		// "https://api.github.com/repos/gael-src/github-api/contents/README.md",
+		// "https://api.github.com/repos/gael-src/github-api",
+		"https://api.github.com/repos/gael-src/github-api/contents/README.md",
 		// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md",
 		// "https://api.github.com/repos/gael-src/github-api/contents/title.txt",
+
 		requestOptions
 	)
-		.then((response) => response.json())
+		// .then((response) => response.json())
 		.then((result) => {
-			// console.log("result"), console.log(result);
+			console.log("result"), console.log(result);
+			// articlesJSON = result;
 		})
 		.catch((error) => console.log("error:", error));
 }
@@ -66,8 +84,8 @@ function txtOutput() {
 	// console.log("txtOutput");
 	const title = document.querySelector(".h3--title");
 	const article = document.querySelector(".p--article");
-	title.innerHTML = "Placeholder Title";
-	article.innerHTML = "Placeholder Article";
+	title.innerHTML = titleTXT;
+	article.innerHTML = articleTXT;
 }
 
 // JSON OUTPUT
@@ -75,16 +93,7 @@ function jsonOutput() {
 	const jsonWrapper = document.querySelector(".json--wrapper");
 
 	// console.log("jsonOutput");
-	let articles = [
-		{
-			title: "Title 1 in .json file",
-			article: "Lorem 1 ipsum dolor sit",
-		},
-		{
-			title: "Title 2 in .json file",
-			article: "Lorem 2 ipsum dolor sit",
-		},
-	];
+	let articles = articlesJSON;
 
 	articles.map((article) => {
 		let card = document.createElement("div");
