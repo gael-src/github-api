@@ -26,9 +26,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
 // TITLE TXT FETCH
 function titleFetch() {
 	const searchQueryURL = "https://api.github.com/";
-	// "https://api.github.com/repos/gael-src/github-api";
-	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
-	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
 
 	fetch(searchQueryURL)
 		.then((result) => result.json())
@@ -41,10 +38,7 @@ function titleFetch() {
 
 // ARTICLE TXT FETCH
 function articleFetch() {
-	// const searchQueryURL = "https://api.github.com/repos/gael-src/github-api";
-	// "https://api.github.com/repos/gael-src/github-api/contents/README.md";
-	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
-	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
+	const searchQueryURL = "https://api.github.com/";
 
 	fetch(searchQueryURL)
 		.then((result) => result.json())
@@ -70,7 +64,7 @@ async function fetchAsync() {
 
 		requestOptions
 	)
-		// .then((response) => response.json())
+		.then((response) => response.json())
 		.then((result) => {
 			// console.log("result"), console.log(result);
 			// articlesJSON = result;
