@@ -29,6 +29,10 @@ h3 {
 	margin: 0 0 10px 0;
 }
 
+p {
+	margin: 0 0 10px 0;
+}
+
 .main--wrapper {
 	border: solid 1px #080808;
 	background-color: white;
@@ -43,4 +47,12 @@ h3 {
 
 .main--wrapper > * {
 	margin: 0 0 10px 0;
+	border-radius: 5px;
+}
+
+.art--wrapper {
+	background-color: #d8d8d8;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
 }

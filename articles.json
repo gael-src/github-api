@@ -1,12 +1,12 @@
 {
-	"articles": {
-		"art1": {
+	"articles": [
+		{
 			"Title": "Title 1 in .json file",
 			"article": "Lorem 1 ipsum dolor sit"
 		},
-		"art2": {
+		{
 			"Title": "Title 2 in .json file",
 			"article": "Lorem 2 ipsum dolor sit"
 		}
-	}
+	]
 }

@@ -49,8 +49,33 @@ function txtOutput() {
 
 // JSON
 function jsonOutput() {
-	console.log("jsonOutput");
-	let articles = {};
 	const jsonWrapper = document.querySelector(".json--wrapper");
-	jsonWrapper.innerHTML = "Placeholder JSON";
+
+	console.log("jsonOutput");
+	let articles = [
+		{
+			title: "Title 1 in .json file",
+			article: "Lorem 1 ipsum dolor sit",
+		},
+		{
+			title: "Title 2 in .json file",
+			article: "Lorem 2 ipsum dolor sit",
+		},
+	];
+
+	articles.map((article) => {
+		let card = document.createElement("div");
+		card.classList.add("art--wrapper");
+		jsonWrapper.appendChild(card);
+
+		let titleH3 = document.createElement("h3");
+		titleH3.classList.add("h3--title");
+		titleH3.innerText = article.title;
+		card.appendChild(titleH3);
+
+		let artP = document.createElement("p");
+		artP.classList.add("p--article");
+		artP.innerText = article.article;
+		card.appendChild(artP);
+	});
 }
