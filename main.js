@@ -13,7 +13,7 @@ let articlesJSON = [
 
 window.addEventListener("DOMContentLoaded", function (e) {
 	// TXT FETCH
-	// titleFetch();
+	titleFetch();
 	// articleFetch();
 	// JSON FETCH
 	fetchAsync();
@@ -25,8 +25,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
 // TITLE TXT FETCH
 function titleFetch() {
-	const searchQueryURL = 
-	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
+	const searchQueryURL = "https://api.github.com/";
 	// "https://api.github.com/repos/gael-src/github-api";
 	// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md";
 	// "https://api.github.com/repos/gael-src/github-api/contents/title.txt";
@@ -34,7 +33,7 @@ function titleFetch() {
 	fetch(searchQueryURL)
 		.then((result) => result.json())
 		.then((response) => {
-			// console.log("title response"), console.log(response);
+			console.log("title response"), console.log(response);
 			// titleTXT = result;
 		})
 		.catch((err) => console.log(err));
@@ -60,12 +59,12 @@ function articleFetch() {
 async function fetchAsync() {
 	const requestOptions = {
 		method: "GET",
-		redirect: "follow",
+		// redirect: "follow",
 	};
 
 	await fetch(
-		// "https://api.github.com/repos/gael-src/github-api",
-		"https://api.github.com/repos/gael-src/github-api/contents/README.md",
+		"https://api.github.com/",
+		// "https://api.github.com/repos/gael-src/github-api/contents/README.md",
 		// "https://raw.githubusercontent.com/gael-src/github-api/main/README.md",
 		// "https://api.github.com/repos/gael-src/github-api/contents/title.txt",
 
@@ -73,7 +72,7 @@ async function fetchAsync() {
 	)
 		// .then((response) => response.json())
 		.then((result) => {
-			console.log("result"), console.log(result);
+			// console.log("result"), console.log(result);
 			// articlesJSON = result;
 		})
 		.catch((error) => console.log("error:", error));
